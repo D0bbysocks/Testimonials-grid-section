@@ -1,0 +1,132 @@
+:root {
+
+/* Colors */
+    
+    /* Primary */
+    --purple-50: hsl(260, 100%, 95%);
+    --purple-300: hsl(264, 82%, 80%);
+    --purple-500: hsl(263, 55%, 52%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --grey-100: hsl(214, 17%, 92%);
+    --grey-200: hsl(0, 0%, 81%);
+    --grey-400: hsl(224, 10%, 45%);
+    --grey-500: hsl(217, 19%, 35%);
+    --dark-blue: hsl(219, 29%, 14%);
+    --black: hsl(0, 0%, 7%);
+
+
+/* Fonts */
+    /* size */
+    --size-20: 1.25rem;
+    --size-13: .8125rem;
+    --size-11: .6875rem;
+
+    /* presets */
+    --preset-1-font-family: "Barlow";
+    --preset-1-font-size: var(--size-20);
+    --preset-1-line-height: 1.2;
+    --preset-1-font-weight: 600;
+    --preset-1-letter-spacing: 0;
+
+    --preset-2-font-family: "Barlow";
+    --preset-2-font-size: var(--size-13);
+    --preset-2-line-height: 1.1;
+    --preset-2-font-weight: 500;
+    --preset-2-letter-spacing: 0;   
+    
+    --preset-3-font-family: "Barlow";
+    --preset-3-font-size: var(--size-13);
+    --preset-3-line-height: 1.4;
+    --preset-3-font-weight: 500      ;
+    --preset-3-letter-spacing: 0;   
+    
+    --preset-4-font-family: "Barlow";
+    --preset-4-font-size: var(--size-11);
+    --preset-4-line-height: 1.1;
+    --preset-4-font-weight: 500 ;
+    --preset-4-letter-spacing: 0; 
+    
+    
+/* Spacing */
+    --space-40: 2.5rem;
+    --space-32: 2rem;
+    --space-24: 1.5rem;
+    --space-16: 1rem;
+    --space-8: .5rem;
+    --space-4: .25rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Barlow";
+    src: url(./fonts/BarlowSemiCondensed-Medium.ttf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Barlow";
+    src: url(./fonts/BarlowSemiCondensed-SemiBold.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.t-1 { 
+  font: var(--preset-1-font-weight) var(--preset-1-font-size)/var(--preset-1-line-height) var(--preset-1-font-family);
+  letter-spacing: var(--preset-1-letter-spacing);
+}
+.t-2 {
+  font: var(--preset-2-font-weight) var(--preset-2-font-size)/var(--preset-2-line-height) var(--preset-2-font-family);
+  letter-spacing: var(--preset-2-letter-spacing);
+}
+.t-3 {
+  font: var(--preset-3-font-weight) var(--preset-3-font-size)/var(--preset-3-line-height) var(--preset-3-font-family);
+  letter-spacing: var(--preset-3-letter-spacing);
+}
+.t-4 {
+  font: var(--preset-4-font-weight) var(--preset-4-font-size)/var(--preset-4-line-height) var(--preset-4-font-family);
+  letter-spacing: var(--preset-4-letter-spacing);
+}
+
+.container {
+    padding: 2.1875rem;
+    padding-top: 4.5625rem;
+}
+
+.grid {
+    display: grid;
+    gap: var(--space-32) var(--space-24);
+    grid-template-columns: 1fr;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    padding: var(--space-32);
+    border-radius: var(--space-8);
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 1.75rem;
+    border-radius: 50%;
+    border: 2px solid var(--purple-300);
+}
+
+.daniel {
+    background-color: var(--purple-500);
+    color: var(--white);
+}
+
+.daniel .profile__status,
+.daniel .testimonial__text {
+  color: var(--purple-50)
+}
