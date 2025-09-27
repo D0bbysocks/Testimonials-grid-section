@@ -53,6 +53,7 @@
     --space-40: 2.5rem;
     --space-32: 2rem;
     --space-24: 1.5rem;
+    --space-17: 1.0625rem;
     --space-16: 1rem;
     --space-8: .5rem;
     --space-4: .25rem;
@@ -96,31 +97,62 @@
 }
 
 .container {
+    display: grid;
+    place-items: center;
+    width: 100svw;
+    min-height: 100dvh;
     padding: 2.1875rem;
     padding-top: 4.5625rem;
+    background-color: var(--grey-100);
 }
 
 .grid {
     display: grid;
     gap: var(--space-32) var(--space-24);
     grid-template-columns: 1fr;
+    max-width: 70rem;
 }
 
 .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
     padding: var(--space-32);
     border-radius: var(--space-8);
+    box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.24);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-17);
 }
 
 .profile img {
     border-radius: 50%;
     width: 1.75rem;
+    height: 1.75rem;
     border-radius: 50%;
     border: 2px solid var(--purple-300);
 }
 
+.quote {
+  position: absolute;
+  top: 0;
+  right: 3.75rem;
+  max-width: 6.5rem;
+  z-index: 1;
+  display: none;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* CARD DANIEL */
 .daniel {
     background-color: var(--purple-500);
     color: var(--white);
@@ -128,5 +160,124 @@
 
 .daniel .profile__status,
 .daniel .testimonial__text {
-  color: var(--purple-50)
+  color: var(--purple-50);
+}
+
+/* z-index fürs Quote */
+.daniel .profile__status,
+.daniel .testimonial__text,
+.t-1,
+.t-2 {
+  z-index: 2;
+}
+
+
+/* CARD JEANETTE */
+.jeanette {
+  background-color: var(--white);
+}
+
+.jeanette .person .t-2,
+.jeanette .t-1 {
+  color: var(--grey-500);
+}
+
+.jeanette .profile__status,
+.jeanette .testimonial__text {
+  color: var(--grey-400);
+}
+
+/* CARD JONATHAN */
+.jonathan {
+  background-color: var(--grey-500);
+  color: var(--white);
+}
+
+
+.jonathan .profile__status {
+  color: var(--grey-200);
+}
+
+.jonathan .testimonial__text {
+  color: var(--grey-100);
+}
+
+/* CARD PATRICK */
+.patrick {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.patrick .t-1 {
+  color: var(--grey-200);
+}
+
+.patrick .testimonial__text {
+  color: var(--grey-100);
+}
+
+/* CARD KIRA */
+.kira {
+  background-color: var(--white);
+}
+
+.kira .person .t-2,
+.kira .t-1 {
+  color: var(--grey-500);
+}
+
+.kira .profile__status,
+.kira .testimonial__text {
+  color: var(--grey-400);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 40rem;
+  }
+  .daniel,
+  .patrick,
+  .kira {
+    grid-column: span 2;
+  }
+  .quote {
+    display: block;
+  }
+}
+
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:  "daniel daniel jonathan kira" 
+                          "jeanette patrick patrick kira";
+  }
+  /* CARD DANIEL */
+  .daniel {
+      grid-area: daniel;
+  }
+
+  /* CARD JEANETTE */
+  .jeanette {
+    grid-area: jeanette;
+  }
+
+  /* CARD JONATHAN */
+  .jonathan {
+    grid-area: jonathan;
+  }
+
+  /* CARD PATRICK */
+  .patrick {
+    grid-area: patrick;
+  }
+
+
+  /* CARD KIRA */
+  .kira {
+    grid-area: kira;
+  }
+  .quote {
+    display: block;
+  }
 }
